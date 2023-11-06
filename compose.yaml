@@ -1,0 +1,11 @@
+services:
+  server:
+    build: .
+    image: react-component-library:v1
+    container_name: react-component-library
+    ports:
+      - "6006:6006"
+    volumes:
+      - ./:/home/node/app
+    stdin_open: true 
+    tty: true
