@@ -4,6 +4,7 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import terser from "@rollup/plugin-terser";
+import svgr from "@svgr/rollup";
 
 import packageJson from "./package.json" assert { type: "json" };
 
@@ -25,6 +26,7 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
+      svgr(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(),
       terser(),
